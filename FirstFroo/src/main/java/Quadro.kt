@@ -20,21 +20,7 @@ class Read(var A:Double, var B:Double, var C:Double, val zero:Double = 1e-15){
     private fun x1():Double=(-B+qr)/(2*A)
     private fun x2():Double=(-B-qr)/(2*A)
     private fun x():Double=(-B)/(2*A)
-    private fun check_a(): Boolean {
-        if (Math.abs(A) <= zero) {
-            return true
-        } else {
-            return false
-        }
-    }
-    fun sol(): List<Double> {
-        if ((check_a()) && (discriminant() < zero)) {
-            return declaim()
-        } else {
-            return declaim()
-        }
-    }
-
+    
     fun declaim(): List<Double>{
         if(Math.abs(A) < zero)
             throw IllegalArgumentException("A should`n be a zero")
